@@ -1,0 +1,27 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+*.log
+
+# Environment
+.env
+venv/
+.env.*
+
+# Docker
+db_data/
+*.pid
+
+# VSCode
+.vscode/
+
+# Mac & OS
+.DS_Store
+
+# Pip
+pip-log.txt
+
+# pyproject.lock
+poetry.lock

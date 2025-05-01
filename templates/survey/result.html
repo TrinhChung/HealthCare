@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kết quả đánh giá sức khỏe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background-color: #f4f7f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .result-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h3 {
+            color: #444;
+            border-left: 4px solid #007bff;
+            padding-left: 10px;
+        }
+
+        .section p {
+            margin: 10px 0;
+        }
+
+        .prompt-box {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-container">
+    <h2>Kết quả đánh giá sức khỏe</h2>
+
+    <div class="section">
+        <h3>Thông tin bạn đã cung cấp</h3>
+        <p><strong>Tuổi:</strong> {{ survey.age }}</p>
+        <p><strong>Giới tính:</strong> {{ "Nam" if survey.gender == "male" else "Nữ" }}</p>
+        <p><strong>Có bệnh nền:</strong> {{ "Có" if survey.has_chronic_disease else "Không" }}</p>
+        <p><strong>Có hút thuốc:</strong> {{ "Có" if survey.smoking else "Không" }}</p>
+    </div>
+
+    <div class="section">
+        <h3>Yêu cầu gửi tới AI</h3>
+        <div class="prompt-box">{{ prompt }}</div>
+    </div>
+
+    <!-- Trong bước tiếp theo, bạn có thể thêm phần này -->
+    <div class="section">
+        <h3>Kết quả tư vấn từ AI</h3>
+        <div class="prompt-box">{{ ai_response }}</div>
+    </div>
+</div>
+
+</body>
+</html>
